@@ -1,0 +1,270 @@
+.home__container {
+  min-height: 100vh;
+  background-image: url("../assets/home/background-home-mobile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home__content {
+  padding-top: var(--small_mobile_from_top);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.2s;
+  position: relative;
+
+  &.blured {
+    filter: blur(5px);
+  }
+
+  .home-subtitle {
+    font-family: var(--sans);
+    font-weight: 400;
+    color: var(--blueish);
+    letter-spacing: 3px;
+    font-size: 1rem;
+  }
+
+  .home-title {
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 8px;
+    padding: 0.5rem 0 0.5rem;
+  }
+
+  .home-subtitle,
+  .home-title {
+    text-transform: uppercase;
+  }
+
+  .home-text-content {
+    font-family: var(--sans);
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    color: var(--blueish);
+    text-align: center;
+    z-index: 1;
+  }
+}
+
+.explore-btn {
+  height: 7rem;
+  width: 7rem;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.2s;
+  z-index: 0;
+
+  &:hover {
+    scale: 1.05;
+    cursor: pointer;
+  }
+
+  &.blured {
+    filter: blur(5px);
+  }
+
+  .link {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 375px) {
+  .home__content {
+    padding-top: var(--mobile_from_top);
+
+    .home-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .home-title {
+      font-size: 5rem;
+    }
+
+    .home-text-content {
+      font-size: 1.2rem;
+      line-height: 160%;
+    }
+  }
+
+  .explore-btn {
+    height: 10rem;
+    width: 10rem;
+    bottom: 5%;
+    .link {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .home__container {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+
+  .home__content {
+    margin: 0 auto;
+    max-width: 65%;
+    padding-top: 20vh;
+
+    &.blured {
+      filter: none;
+    }
+
+    .home-subtitle {
+      font-size: 1.5rem;
+    }
+
+    .home-title {
+      font-size: 10rem;
+    }
+
+    .home-text-content {
+      font-size: 1.4rem;
+    }
+  }
+  .explore-btn {
+    height: 13rem;
+    width: 13rem;
+    &.blured {
+      filter: none;
+    }
+
+    .link {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .home__content {
+    padding-top: var(--medium_tablet_from_top);
+
+    .home-subtitle {
+      font-size: 1.8rem;
+    }
+
+    .home-title {
+      font-size: 12rem;
+    }
+
+    .home-text-content {
+      font-size: 1.6rem;
+      line-height: 200%;
+    }
+  }
+
+  .explore-btn {
+    height: 17rem;
+    width: 17rem;
+
+    .link {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (min-width: 1092px) {
+  .home__container {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
+
+  .home__content {
+    padding-top: var(--desktop_from_top);
+    align-items: flex-start;
+    max-width: 75%;
+
+    .home-subtitle {
+      font-size: 1.2rem;
+      letter-spacing: 8px;
+    }
+
+    .home-title {
+      padding: 1rem 0;
+      font-size: 8rem;
+    }
+
+    .home-text-content {
+      width: 50%;
+      padding: 0;
+      text-align: left;
+      font-size: 1.3rem;
+    }
+  }
+
+  .explore-btn {
+    transform: translate(0);
+    left: 70%;
+    top: 55%;
+    height: 15rem;
+    width: 15rem;
+
+    .link {
+      font-size: 1.6rem;
+      letter-spacing: 4px;
+    }
+  }
+}
+
+@media (min-width: 1468px) {
+  .home__content {
+    .home-subtitle {
+      font-size: 1.5rem;
+    }
+
+    .home-title {
+      padding: 2rem 0;
+      font-size: 10rem;
+    }
+
+    .home-text-content {
+      font-size: 1.5rem;
+    }
+  }
+  .explore-btn {
+    height: 18rem;
+    width: 18rem;
+
+    .link {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (min-width: 2560px) {
+  .home__content {
+    padding-top: var(--desktop_from_top);
+
+    .home-subtitle {
+      font-size: 2.5rem;
+    }
+
+    .home-title {
+      font-size: 15rem;
+    }
+
+    .home-text-content {
+      font-size: 2rem;
+    }
+  }
+
+  .explore-btn {
+    height: 25rem;
+    width: 25rem;
+
+    .link {
+      font-size: 2.5rem;
+      letter-spacing: 8px;
+    }
+  }
+}

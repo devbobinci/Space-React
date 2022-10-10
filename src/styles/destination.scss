@@ -1,0 +1,350 @@
+.destination__container {
+  background-image: url("../assets/destination/background-destination-mobile.jpg");
+}
+
+.destination__content {
+  padding-top: var(--small_mobile_from_top);
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease-in-out;
+
+  .page__content {
+    .planet__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 70%;
+        animation: planetMove 8s infinite linear;
+      }
+
+      @keyframes planetMove {
+        0% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(20px) translateX(20px);
+        }
+
+        80% {
+          transform: translateY(20px) translateX(-20px);
+        }
+
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    }
+
+    .planets__list {
+      margin-top: 10%;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      place-items: center;
+
+      .link {
+        font-family: var(--sans);
+        color: var(--blueish);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: "";
+          display: block;
+          height: 1px;
+          width: 0;
+          bottom: -50%;
+          background: rgb(97, 96, 96);
+          transition: width 0.15s ease-in-out;
+        }
+
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+
+        &.active {
+          &::after {
+            width: 100%;
+            background: #fff;
+          }
+        }
+      }
+    }
+
+    .planet__title {
+      margin-top: 15%;
+      font-weight: 300;
+      letter-spacing: 5px;
+      text-align: center;
+      font-size: 4rem;
+    }
+
+    .planet__desc {
+      margin-top: 5%;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: var(--blueish);
+        opacity: 0.3;
+        border-radius: 1px;
+        bottom: -2rem;
+        left: 0;
+      }
+    }
+
+    .planet-travel {
+      margin-top: 20%;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      place-content: center;
+      place-items: center;
+      text-align: center;
+
+      .title {
+        text-transform: uppercase;
+        color: var(--blueish);
+        font-family: var(--sans);
+        letter-spacing: 1px;
+      }
+
+      .amount {
+        padding: 0.5rem 0 1rem;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@media (min-width: 375px) {
+  .destination__content {
+    .page__content {
+      .planet__container {
+        img {
+          width: 75%;
+        }
+      }
+
+      .planets__list {
+        .link {
+          font-size: 1.2rem;
+        }
+      }
+
+      .planet__title {
+        font-size: 4rem;
+      }
+
+      .planet__desc {
+        font-size: 1.2rem;
+      }
+
+      .planet-travel {
+        .title {
+          font-size: 1.1rem;
+        }
+
+        .amount {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .destination__container {
+    background-image: url("../assets/destination/background-destination-tablet.jpg");
+  }
+
+  .destination__content {
+    .page__content {
+      .planet__container {
+        img {
+          width: 50%;
+        }
+      }
+
+      .planets__list {
+        grid-template-columns: repeat(4, 15%);
+        place-content: center;
+      }
+
+      .planet__title {
+        font-size: 6rem;
+        margin: 1rem 0 1rem;
+      }
+
+      .planet-travel {
+        margin-top: 10%;
+        grid-template-columns: 45% 45%;
+        column-gap: 5%;
+        grid-template-rows: 1fr 0;
+
+        .amount {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 820px) {
+  .destination__content {
+    .page__content {
+      .page__container {
+        .planet-travel {
+          .amount {
+            font-size: 2.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .destination__content {
+    .page__content {
+      .planet__container {
+        img {
+          width: 50%;
+        }
+      }
+      .planets__list {
+        .link {
+          font-size: 1.5rem;
+        }
+      }
+      .planet__title {
+        font-size: 7rem;
+      }
+
+      .planet-travel {
+        margin-top: 7%;
+        grid-template-rows: 1fr 0;
+
+        .title {
+          font-size: 1.4rem;
+        }
+
+        .amount {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1092px) {
+  .destination__container {
+    background-image: url("../assets/destination/background-destination-desktop.jpg");
+    background-size: cover;
+  }
+
+  .destination__content {
+    padding-top: var(--tablet_from_top);
+    .page__content {
+      display: grid;
+      grid-template-columns: 50% 45%;
+      column-gap: 5%;
+      margin: 7vh auto 0;
+
+      .planet__container {
+        margin-top: 1rem;
+        img {
+          width: 75%;
+        }
+      }
+
+      .planets__list {
+        margin-top: 0;
+        place-content: start;
+        grid-template-columns: repeat(4, auto);
+
+        .link {
+          margin-right: 2rem;
+          font-size: 1.3rem;
+        }
+      }
+
+      .planet__title {
+        text-align: left;
+        font-size: 6rem;
+        margin-top: 10%;
+      }
+
+      .planet__desc {
+        text-align: left;
+        width: auto;
+        padding-bottom: 5%;
+        font-size: 1.2rem;
+        line-height: 150%;
+      }
+
+      .planet-travel {
+        place-content: start;
+        grid-template-columns: repeat(2, auto);
+        margin-top: 10%;
+
+        .distance__container {
+          margin-right: 5rem;
+        }
+
+        .title {
+          text-align: left;
+          font-weight: 400;
+          letter-spacing: 2px;
+          font-size: 1rem;
+        }
+
+        .amount {
+          font-weight: 400;
+          font-size: 1.6rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1468px) {
+  .destination__content {
+    .title__container {
+      .title {
+        padding-top: 1.45rem !important;
+      }
+    }
+
+    .page__content {
+      .planet__title {
+        font-size: 7rem;
+      }
+
+      .planet__desc {
+        font-size: 1.4rem;
+      }
+
+      .planet-travel {
+        .title {
+          font-size: 1.2rem;
+        }
+        .amount {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

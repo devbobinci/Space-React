@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&family=Zen+Maru+Gothic:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --blueish: #b3b6c9;
+  --sans: "Open Sans Condensed", sans-serif;
+  --belle: "Bellefair", serif;
+
+  --small_mobile_from_top: 15vh;
+  --mobile_from_top: 18vh;
+  --tablet_from_top: 20vh;
+  --medium_tablet_from_top: 22vh;
+  --desktop_from_top: 35vh;
+}
+
+body {
+  background: #222;
+  color: #fff;
+}
+
+.app {
+  margin: 0 auto;
+}
+
+.background {
+  min-height: 100vh;
+  background-size: cover;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding-top: var(--small_mobile_from_top);
+
+  .title__container {
+    .title {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+
+      .page__number {
+        margin-right: 1rem;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &.blured {
+    filter: blur(5px);
+  }
+
+  .page__content {
+    margin-top: 5vh;
+
+    .page__container {
+      .description {
+        font-size: 1rem;
+        color: var(--blueish);
+        letter-spacing: 1px;
+        text-align: center;
+        font-family: var(--sans);
+      }
+    }
+  }
+}
+
+@media (min-width: 375px) {
+  .container {
+    .title__container {
+      .title {
+        font-size: 1.4rem;
+      }
+    }
+    .page__content {
+      margin-top: 5vh;
+
+      .page__container {
+        .description {
+          font-size: 1.15rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-rows: 1rem 1fr;
+
+    &.blured {
+      filter: none;
+    }
+
+    .title__container {
+      .title {
+        text-align: left;
+      }
+    }
+
+    .page__content {
+      .page__container {
+        .description {
+          width: 90%;
+          margin: 0 auto !important;
+          font-size: 1.25rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 820px) {
+  .container {
+    .title__container {
+      .title {
+        font-size: 1.6rem;
+      }
+    }
+
+    .page__content {
+      .page__container {
+        .description {
+          font-size: 1.4rem !important;
+          line-height: 160%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    .page__content {
+      .page__container {
+        .description {
+          font-size: 1.75rem !important;
+          line-height: 160%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1092px) {
+  .container {
+    padding-top: var(--tablet_from_top);
+
+    .title__container {
+      margin-left: 0 !important;
+
+      .title {
+        font-size: 2rem;
+      }
+    }
+
+    .page__content {
+      .page__container {
+        .description,
+        .planet__title,
+        .page__subtitle,
+        .page__title .description {
+          text-align: left !important;
+        }
+
+        .description {
+          margin-left: 0 !important;
+          font-size: 1.3rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1468px) {
+  .container {
+    padding-top: var(--medium_tablet_from_top);
+
+    .title__container {
+      margin-left: 0;
+    }
+
+    .page__content {
+      .page__container {
+        .description {
+          font-size: 1.6rem !important;
+        }
+      }
+    }
+  }
+}
